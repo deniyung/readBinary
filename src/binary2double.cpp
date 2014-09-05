@@ -45,7 +45,7 @@ fileLength = fileRead(fname, length, data);
   if(endianFlg == true ) {endian_convert(data, length);}
   for (int i = 0; i < length && i< fileLength; i++)
   {
-    std::cout<<i<<" "<<data[i]<<std::endl;
+    printf("%1.16d %+1.16e\n", i, data[i]);
   }
   delete [] data;
 
