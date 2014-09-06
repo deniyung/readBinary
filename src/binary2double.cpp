@@ -1,6 +1,6 @@
 //--------------------------------------------------------------------------
 /**
- * @file readBinary.cpp
+ * @file binary2double.cpp
  * @ingroup
  * @brief read binary file
  * @author himo

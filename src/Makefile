@@ -28,10 +28,18 @@ check-syntax:
 	rm -f $@.$$$$
 
 clean:
-	@rm -rf ../*.out *.o  *.d  *.deps  ../*.dSYM ../debug
+	@rm -rf ../*.out *.o  *.d  *.deps  ../*.dSYM ../debug  \ Doxygen *.bak
 
 #sufix rule
 .cpp.o:
 	$(CXX) -o $@ $(CFLAGS) $(INCLIST) -c $<
 .o.out:
 	$(CXX) -o ../$@ $(CFLAGS) $(INCLIST)  $<
+doc:docclean
+	doxygen -g
+	Doxygen Doxyfile
+	rm Doxyfile
+	rm -rf latex
+	mv html ../
+docclean:
+	rm -rf ../html  \ Doxygen
